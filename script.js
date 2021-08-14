@@ -4,10 +4,8 @@ const characterAmountNumber= document.getElementById
 ("characterAmountNumber")
 const includeUppercaseElement = document.getElementById
 ("includeUppercase")
-const includeNumbersElement = document.getElementById
-("includeNumbers")
-const includeSymbolsElement = document. getElementById
-("includeSymbols")
+const includeNumbersElement = document.getElementById("includeNumbers")
+const includeSymbolsElement = document. getElementById("includeSymbols")
 const form = document.getElementById("passwordGeneratorForm")
 const passwordDisplay = document.getElementById("passwordDisplay")
 
@@ -20,7 +18,7 @@ const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33,47) .concat(
   arrayFromLowToHigh(91,96)
   .concat(
   arrayFromLowToHigh(123,126)
-)
+  ))
 
 characterAmoutRange.addEventListener("input", synchCharacterAmount)
 characterAmountNumber.addEventListener("input",synchCharacterAmount)
@@ -31,8 +29,7 @@ form.addEventListener("submit", e=> {
   const includeUppercase = includeUppercaseElement.checked
   const includeNumbers = includeNumbersElement.checked
   const includeSymbols = includeSymbolsElement.checked
-  const password = generatePassword(characterAmount, 
-  includeUppercase,includeNumbers, includeSymbols)
+  const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
   passwordDisplay.innerText = password
 
 })
@@ -63,7 +60,7 @@ function arrayFromLowToHigh(low,high) {
   return array
 }
 
-function synchCharacterAmount (e) {
+function synchCharacterAmount(e) {
   const value = e.target.value
   characterAmountNumber.value = value
   characterAmoutRange.value=value
